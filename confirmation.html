@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Successful!</h1>
+        <p>Thank you for registering. Here are your details:</p>
+        <ul>
+            <li><strong>Name:</strong> <span id="displayName"></span></li>
+            <li><strong>Email:</strong> <span id="displayEmail"></span></li>
+            <li><strong>Phone:</strong> <span id="displayPhone"></span></li>
+            <li><strong>Event:</strong> <span id="displayEvent"></span></li>
+        </ul>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('displayName').textContent = params.get('name');
+        document.getElementById('displayEmail').textContent = params.get('email');
+        document.getElementById('displayPhone').textContent = params.get('phone');
+        document.getElementById('displayEvent').textContent = params.get('event');
+    </script>
+</body>
+</html>
